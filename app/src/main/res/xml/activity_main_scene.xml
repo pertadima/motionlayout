@@ -4,39 +4,52 @@
 
     <Transition
         app:constraintSetEnd="@id/end"
-        app:constraintSetStart="@id/start">
+        app:constraintSetStart="@id/start"
+        app:duration="600"
+        app:motionInterpolator="bounce">
 
         <OnClick
             app:clickAction="transitionToEnd"
-            app:targetId="@id/button" />
-
-        <KeyFrameSet>
-            <KeyPosition
-                app:framePosition="10"
-                app:keyPositionType="pathRelative"
-                app:motionTarget="@+id/button"
-                app:percentX="0.2"
-                app:percentY="0.3" />
-
-            <KeyPosition
-                app:framePosition="20"
-                app:keyPositionType="pathRelative"
-                app:motionTarget="@+id/button"
-                app:percentX="0.5"
-                app:percentY="0.4" />
-        </KeyFrameSet>
+            app:targetId="@+id/fab_memu" />
     </Transition>
 
-    <ConstraintSet android:id="@+id/start">
-        <Constraint android:id="@+id/button" />
-    </ConstraintSet>
+    <ConstraintSet android:id="@+id/start" />
 
     <ConstraintSet android:id="@+id/end">
         <Constraint
-            android:id="@id/button"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            android:id="@+id/fab_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="40dp"
+            android:alpha="1"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toBottomOf="@id/fab_memu"
+            app:layout_constraintStart_toEndOf="@+id/fab_memu"
+            app:layout_constraintTop_toTopOf="@id/fab_memu" />
+
+        <Constraint
+            android:id="@+id/fab_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="40dp"
+            android:alpha="1"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toBottomOf="@id/fab_memu"
+            app:layout_constraintEnd_toStartOf="@+id/fab_memu"
+            app:layout_constraintTop_toTopOf="@id/fab_memu" />
+
+        <Constraint
+            android:id="@+id/fab_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:alpha="1"
+            app:fabSize="mini"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/fab_memu" />
+
     </ConstraintSet>
 </MotionScene>

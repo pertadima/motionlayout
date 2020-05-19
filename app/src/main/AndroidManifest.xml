@@ -16,6 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".fab.FabActivity" />
+
+        <activity android:name=".swipe.SwipeActivity" />
+
+        <activity android:name=".card.CardActivity" />
     </application>
 
 </manifest>
